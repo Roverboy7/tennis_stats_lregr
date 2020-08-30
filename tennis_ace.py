@@ -1,4 +1,4 @@
-
+# Import necessary packages and libraries
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -14,12 +14,14 @@ print(tennis_stats.head(10))
 # plt.xlabel('BreakPointsOpportunities ')
 # plt.ylabel('Wins')
 # plt.show()
+# Select your features and outcomes here:
 features = tennis_stats[['BreakPointsOpportunities',
 'FirstServeReturnPointsWon']]
 outcome = tennis_stats[['Winnings']]
 features_train, features_test, outcome_train, outcome_test = train_test_split(features, outcome, train_size = 0.8)
-print(features_train)
-print(outcome_train)
+# print(features_train)
+# print(outcome_train)
+# Run Linear Regression:
 regr1 = LinearRegression()
 regr1.fit(features_train,outcome_train)
 prediction = regr1.predict(features_test)
